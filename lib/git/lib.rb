@@ -930,7 +930,7 @@ module Git
 
       if @logger
         @logger.info(git_cmd)
-        @logger.debug(output)
+        @logger.debug(output) unless output.to_s == ''
       end
 
       if exitstatus > 1 || (exitstatus == 1 && output != '')
